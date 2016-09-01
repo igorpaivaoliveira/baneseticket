@@ -276,7 +276,7 @@ body {
 <table cellspacing=0 cellpadding=0 width=648 border=0>
   <tr>
     <td width="153"><span class="campo"><IMG 
-      src="imagens/logo_banese.gif" width="150" height="40" 
+      src="imagens/logo.png" width="150" height="40" 
       border=0></span></td>
     <td width=3 valign=bottom><img height=22 src=imagens/3.png width=2 border=0></td>
     <td class=cpt width=60 valign=bottom><div align=center><font class=bc><?php echo $dadosboleto["codigo_banco_com_dv"]?></font></div></td>
