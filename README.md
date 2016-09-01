@@ -1,2 +1,2 @@
-# boletobanese
-Programa para geração do Boleto Bancario do banco Banese
+# Banese Ticket
+Simple program for generation the bank ticket to bank Banese.
