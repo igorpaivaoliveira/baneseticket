@@ -47,6 +47,6 @@ $dadosboleto["cidade_uf"] 		= "";
 $dadosboleto["cedente"] 		= "";
 
 // NÃO ALTERAR!
-include("include/funcoes_banese.php"); 
-include("include/layout_banese.php");
+include("include/banesefunction.php"); 
+include("include/baneselayout.php");
 ?>
