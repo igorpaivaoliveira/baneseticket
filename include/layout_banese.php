@@ -1,4 +1,4 @@
-<? require_once("boleto_banese.php")?>
+<? require_once("baneseticket.php")?>
 <style type="text/css">
 <!--
 body,td,th {
