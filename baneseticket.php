@@ -6,16 +6,16 @@ $valor_cobrado 		= $valorAux; 									// Valor - REGRA: Sem pontos na milhar e 
 $valor_cobrado 		= str_replace(",", ".",$valor_cobrado);
 $valor_boleto 		= number_format($valor_cobrado, 2, ',', '');
 
-$dadosboleto["nosso_numero"] 		= "";  							// Nosso numero sem o DV - REGRA: Máximo de 8 caracteres!
+$dadosboleto["nosso_numero"] 		= "";  							// Nosso numero sem o DV - REGRA: MÃ¡ximo de 8 caracteres!
 $dadosboleto["numero_documento"] 	= "";							// Num do pedido ou do documento
 $dadosboleto["data_vencimento"] 	= $data_venc; 					// Data de Vencimento do Boleto - REGRA: Formato DD/MM/AAAA
-$dadosboleto["data_documento"] 		= date("d/m/Y"); 				// Data de emissão do Boleto
+$dadosboleto["data_documento"] 		= date("d/m/Y"); 				// Data de emissÃ£o do Boleto
 $dadosboleto["data_processamento"] 	= date("d/m/Y"); 				// Data de processamento do boleto (opcional)
-$dadosboleto["valor_boleto"] 		= $valor_boleto; 				// Valor do Boleto - REGRA: Com vírgula e sempre com duas casas depois da virgula
+$dadosboleto["valor_boleto"] 		= $valor_boleto; 				// Valor do Boleto - REGRA: Com vÃ­rgula e sempre com duas casas depois da virgula
 
 // DADOS DO SEU CLIENTE
-// INSTRUÇÕES PARA O CAIXA
-$dadosboleto["instrucoes1"] = ""; 									//- Após o vencimento cobrar 5% de multa e 0,033% de juros ao dia
+// INSTRUÃ‡Ã•ES PARA O CAIXA
+$dadosboleto["instrucoes1"] = ""; 									//- ApÃ³s o vencimento cobrar 5% de multa e 0,033% de juros ao dia
 $dadosboleto["instrucoes2"] = "";
 $dadosboleto["instrucoes3"] = "";
 $dadosboleto["instrucoes4"] = "";
@@ -30,7 +30,7 @@ $dadosboleto["especie_doc"]		= "";
 
 
 
-// ---------------------- DADOS FIXOS DE CONFIGURAÇÃO DO SEU BOLETO --------------- //
+// ---------------------- DADOS FIXOS DE CONFIGURAÃ‡ÃƒO DO SEU BOLETO --------------- //
 
 
 // DADOS DA SUA CONTA - BANESE
@@ -46,7 +46,7 @@ $dadosboleto["endereco"] 		= "";
 $dadosboleto["cidade_uf"] 		= "";
 $dadosboleto["cedente"] 		= "";
 
-// NÃO ALTERAR!
+// NÃƒO ALTERAR!
 include("include/funcoes_banese.php"); 
 include("include/layout_banese.php");
 ?>
