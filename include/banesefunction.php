@@ -1,5 +1,5 @@
 <?
-//CÛdigo do banco de acordo com o banco central
+//C√≥digo do banco de acordo com o banco central
 $codigobanco_sz         = "47"; // Sem o zero
 $codigobanco 			= "0".$codigobanco_sz; 
 $codigo_banco_com_dv	= geraCodigoBanco($codigobanco);
@@ -9,18 +9,18 @@ $valor 					= formata_numero($dadosboleto["valor_boleto"],10,0,"valor");
 $agencia 				= formata_numero($dadosboleto["agencia"],2,0);
 $conta_cedente 			= formata_numero($dadosboleto["conta"],9,0);
 $nnum 					= formata_numero($dadosboleto["nosso_numero"],8,0);
-//Calcula o digito verificador do nosso n˙mero
+//Calcula o digito verificador do nosso n√∫mero
 $dv_nosso_numero 		= digitoVerificador_nossonumero($nnum,$agencia);
 $nossonumero_dv  		= "$nnum$dv_nosso_numero";
 
 // ASBACE
 /*
 A A C C C C C C C C C N N N N N N N N N B B B D D 
-A	- agÍncia do cedente (2 posiÁıes)
-C	- conta corrente do cedente (9 posiÁıes)
-N	- nosso n˙mero, incluindo o dÌgito (9 posiÁıes)
-B	- cÛdigo do banco, 047 para o Banese (3 posiÁıes)
-D	- duplo dÌgito (2 posiÁıes)
+A	- ag√™ncia do cedente (2 posi√ß√µes)
+C	- conta corrente do cedente (9 posi√ß√µes)
+N	- nosso n√∫mero, incluindo o d√≠gito (9 posi√ß√µes)
+B	- c√≥digo do banco, 047 para o Banese (3 posi√ß√µes)
+D	- duplo d√≠gito (2 posi√ß√µes)
 
 CHAVE ASBACE: 34.031028084.000010876.047-86 BANESE
 
@@ -65,25 +65,25 @@ function monta_linha_digitavel($linha,$barras) {
 /*
 BBBMC.CCCCd CCCCC.CCCCCd CCCCC.CCCCCd D FFFFVVVVVVVVVV
 onde:
-ï B ñ n˙mero do banco
-ï M ñ moeda
-ï C ñ campo livre (Chave ASBACE)
-ï d ñ dÌgito verificador dos campos 1, 2 e 3
-ï D ñ dÌgito verificador geral
-ï F ñ fator de vencimento
-ï V ñ valor
-ï 2 posiÁıes para dÌgitos verificadores (duplo dÌgito da chave ASBACE).
+‚Ä¢ B ‚Äì n√∫mero do banco
+‚Ä¢ M ‚Äì moeda
+‚Ä¢ C ‚Äì campo livre (Chave ASBACE)
+‚Ä¢ d ‚Äì d√≠gito verificador dos campos 1, 2 e 3
+‚Ä¢ D ‚Äì d√≠gito verificador geral
+‚Ä¢ F ‚Äì fator de vencimento
+‚Ä¢ V ‚Äì valor
+‚Ä¢ 2 posi√ß√µes para d√≠gitos verificadores (duplo d√≠gito da chave ASBACE).
 */
 
 
-        // 1. Campo - composto pelo cÛdigo do banco, cÛdigo da moÈda, as cinco primeiras posiÁıes
+        // 1. Campo - composto pelo c√≥digo do banco, c√≥digo da mo√©da, as cinco primeiras posi√ß√µes
         // do campo livre e DV (modulo10) deste campo
         $p1 = substr($linha, 0, 5);
         $p2 = substr($linha, 5, 4);
         $p3 = modulo_10("$p1$p2");
         $campo1 = "$p1.$p2$p3";
 
-        // 2. Campo - composto pelas posiÁoes 6 a 15 do campo livre
+        // 2. Campo - composto pelas posi√ßoes 6 a 15 do campo livre
         // e livre e DV (modulo10) deste campo
         $p1 = substr($linha, 9, 5);
         $p2 = substr($linha, 14, 5);
@@ -98,7 +98,7 @@ onde:
         $campo3 = "$p1.$p2$p3";
 
         // 4. Campo - digito verificador do codigo de barras
-		// considerando os 43 dÌgitos que compıem o cÛdigo de barras, j· excluÌda a 5™ posiÁ„o
+		// considerando os 43 d√≠gitos que comp√µem o c√≥digo de barras, j√° exclu√≠da a 5¬™ posi√ß√£o
         $p1 = substr($barras, 0, 4);
         $p2 = substr($barras, 5, 39);		
 		$campo4 = modulo_11($p1.$p2);
@@ -121,7 +121,7 @@ function modulo_10($num) {
             // pega cada numero isoladamente
             $numeros[$i] = substr($num,$i-1,1);
             // Efetua multiplicacao do numero pelo (falor 10)
-            // 2002-07-07 01:33:34 Macete para adequar ao Mod10 do Ita˙
+            // 2002-07-07 01:33:34 Macete para adequar ao Mod10 do Ita√∫
             $temp = $numeros[$i] * $fator; 
             $temp0=0;
             foreach (preg_split('//',$temp,-1,PREG_SPLIT_NO_EMPTY) as $k=>$v){ $temp0+=$v; }
@@ -135,7 +135,7 @@ function modulo_10($num) {
             }
         }
 		
-        // v·rias linhas removidas, vide funÁ„o original
+        // v√°rias linhas removidas, vide fun√ß√£o original
         // Calculo do modulo 10
         $resto = $numtotal10 % 10;
         $digito = 10 - $resto;
@@ -427,7 +427,7 @@ src=imagens/p.png width=<?php echo $largo?> height=<?php echo $altura?> border=0
 src=imagens/b.png width=<?php echo $fino?> height=<?php echo $altura?> border=0><img 
 src=imagens/p.png width=<?php echo 1?> height=<?php echo $altura?> border=0> 
   <?php
-} //Fim da funÁ„o
+} //Fim da fun√ß√£o
 
 function esquerda($entra,$comp){
 	return substr($entra,0,$comp);
